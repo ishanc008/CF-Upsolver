@@ -11,6 +11,10 @@ const useStyles = makeStyles((theme) => ({
     left: "26%",
     transform: "translateY(-50%)",
     width: "50%",
+    ['@media (max-width:611px)']: {
+      left: "16%",
+      width: "75%"
+    },
     //boxShadow: "0 1px 10px #cc2b5e, 0 0 20px  #753a88"
   },
   typoGraphy: {
@@ -37,6 +41,17 @@ const useStyles = makeStyles((theme) => ({
       width: "30px",
     },
   },
+  button: {
+    marginLeft: "20%",
+    ['@media (max-width:890px)']: {
+      marginLeft: "15%",
+      fontSize: "10px"
+    },
+    ['@media (max-width:611px)']: {
+      marginLeft: "10%",
+      fontSize: "7px"
+    },
+  }
 }));
 
 export default useStyles;

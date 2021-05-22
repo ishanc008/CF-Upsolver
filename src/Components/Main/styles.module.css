@@ -52,8 +52,11 @@
 }
 
 .c-formContainer {
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; */
   position: relative;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .c-form,
@@ -119,14 +122,11 @@
   color: #941b1b;
 }
 .c-form__input:required:valid + .c-form__buttonLabel {
-  color: #ffffff;
-}
-.c-form__input:required:valid + .c-form__buttonLabel::before {
-  pointer-events: initial;
+  color: #941b1b;
 }
 
 .c-form__buttonLabel {
-  color: #ffaea9;
+  color: #941b1b;
   height: 100%;
   width: auto;
 }

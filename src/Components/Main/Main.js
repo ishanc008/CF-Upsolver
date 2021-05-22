@@ -1,46 +1,56 @@
-import classes from "./styles.module.css";
-import RefreshIcon from "@material-ui/icons/Refresh";
 import { useState } from "react";
+import axios from "axios"
+import classes from "./styles.module.css";
 
 const Main = () => {
-  const [buttonClass, setButtonClass] = useState(
-    `${classes.refreshIcon} ${classes.refreshIconHide}`
-  );
-  const handleOnChange = (event) => {
-    if (event.target.checked) {
-      setButtonClass(`${classes.refreshIcon}`);
-    }
-  };
+  const [cfHandle, setCfHandle] = useState("");
+  const [error, setError] = useState("");
+
+  const handleOnChange = (e) => {
+    setCfHandle(e.target.value);
+  }
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    console.log(cfHandle);
+    axios.get(`https://codeforces.com/api/user.info?handles=${cfHandle}`)
+      .then((res) => console.log(res))
+      .catch(err => {
+        console.log(err.response.data.comment);
+        setError(err.response.data.comment);
+      })
+    setCfHandle("");
+  }
+
   return (
     <div className={classes.button}>
       <input
         className={classes["c-checkbox"]}
         type="checkbox"
         id="checkbox"
-        onChange={handleOnChange}
       />
       <div className={classes["c-formContainer"]}>
-        <form className={classes["c-form"]} action="">
+        <form className={classes["c-form"]} onSubmit={handleOnSubmit} >
           <input
             className={classes["c-form__input"]}
             placeholder="CF Handle"
             type="text"
+            value={cfHandle}
+            onChange={handleOnChange}
             required
           />
-          <label className={classes["c-form__buttonLabel"]} for="checkbox">
-            <button className={classes["c-form__button"]} type="button">
+          <div className={classes["c-form__buttonLabel"]}>
+            <button className={classes["c-form__button"]} type="submit" >
               Submit
             </button>
-          </label>
+          </div>
           <label
             className={classes["c-form__toggle"]}
             for="checkbox"
             data-title="Enter CF Handle"
           ></label>
         </form>
-        <div className={buttonClass}>
-          <RefreshIcon />
-        </div>
+        <p style={{ color: "red" }}>error</p>
       </div>
     </div>
   );

@@ -156,3 +156,12 @@
 .refreshIconHide {
   display: none;
 }
+
+p {
+  margin-top: 40%;
+  justify-content: center;
+  width: 100%;
+  font-size: medium;
+  font-family: "Courier New", Courier, monospace;
+  color: red;
+}

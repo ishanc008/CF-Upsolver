@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
 import { motion } from "framer-motion"
-import { Grid, Paper, Typography } from '@material-ui/core';
+import classes from "./styles.module.css";
 
 const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
 
@@ -37,11 +37,11 @@ const Upsolve = (props) => {
     const maxTitle = userTitle(user.maxRating);
     console.log(title);
     return (
-        <motion.div exit={{ opacity: 0 }} transition={transition} style={{ dispay: "block" }}>
+        <motion.div exit={{ opacity: 0 }} transition={transition} className={classes.container}>
             <motion.div initial={{ x: -20, y: 40 }} animate={{ x: 5, y: 40 }} transition={{ ease: "easeOut", duration: 1 }}>
                 <Navbar />
             </motion.div>
-            <motion.div initial={{ x: -20, y: "-15%" }} animate={{ x: 5, y: "-15%" }} transition={{ ease: "easeOut", duration: 1 }} style={{ color: "red" }}>
+            <motion.div initial={{ x: -20, y: "-15%" }} animate={{ x: 5, y: "-15%" }} transition={{ ease: "easeOut", duration: 1 }} className={classes.userInfo}>
                 <div>
                     <h2 style={{ fontFamily: "cursive", display: "inline" }}>Welcome,</h2>
                     <h2 style={{ fontFamily: "cursive", color: title[1], display: "inline" }}>{user.firstName} {user.lastName}...</h2>

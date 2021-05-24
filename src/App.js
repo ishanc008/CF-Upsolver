@@ -1,18 +1,22 @@
-import Navbar from "./Components/Navbar/Navbar"
 import Main from "./Components/Main/Main"
 import Upsolve from "./Components/Upsolve/Upsolve"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
 
-function App() {
+const App = () => {
+  const [userInfo, setUserInfo] = useState("");
   return (
     <BrowserRouter>
-      {/* <Navbar /> */}
       <Route render={({ location }) => (
         <AnimatePresence initial={false} exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
-            <Route path="/" exact component={Main} />
-            <Route path="/upsolve" exact component={Upsolve} />
+            <Route path="/" exact>
+              <Main setUserInfo={setUserInfo} />
+            </Route>
+            <Route path="/upsolve" exact>
+              <Upsolve userInfo={userInfo} />
+            </Route>
           </Switch>
         </AnimatePresence>
       )} />

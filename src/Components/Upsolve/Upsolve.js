@@ -2,7 +2,8 @@ import React from "react";
 import Navbar from "./Navbar/Navbar";
 import { motion } from "framer-motion";
 import classes from "./Upsolve.module.css";
-import { Button, Typography, Grid } from "@material-ui/core";
+import { Typography, Grid } from "@material-ui/core";
+import { useHistory } from "react-router-dom"
 
 const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
 
@@ -10,6 +11,7 @@ const Upsolve = (props) => {
     //console.log(props.userInfo?.data?.result);
     const user = props.userInfo?.data?.result[0];
     const userRating = user?.rating;
+    const history = useHistory();
     const userTitle = (rating) => {
         let title;
         if (rating < 1200) title = ["Newbie", "grey"];
@@ -28,7 +30,7 @@ const Upsolve = (props) => {
     const maxTitle = userTitle(user.maxRating);
     console.log(title);
     return (
-        <div>
+        <motion.div exit={{ opacity: 0 }} transition={transition} >
             <motion.div initial={{ x: -10, y: 30 }} animate={{ x: 5, y: 30 }} transition={{ ease: "easeOut", duration: 1 }}>
                 <Navbar />
             </motion.div>
@@ -58,17 +60,17 @@ const Upsolve = (props) => {
                         <button className={classes.button}>Recommended Problems</button>
                     </Grid>
                     <Grid item xs={6} align="center">
-                        <button className={classes.button}>Pending Problems</button>
+                        <button onClick={() => history.push("/upsolve/pending")} className={classes.button}>Pending Problems</button>
                     </Grid>
-                    <Grid item xs={5} justifyContent="center">
+                    <Grid item xs={5}>
                         <Typography variant="subtitle1" align="center" display="block" style={{ color: "white" }}>Recommended problems are divided in different categories based on your rating like easy, medium and hard. These problems are unsolved problems from your problemset.</Typography>
                     </Grid>
-                    <Grid item xs={5} justifyContent="center">
+                    <Grid item xs={5}>
                         <Typography variant="subtitle1" align="center" style={{ color: "white" }}>Pending problems are those problems ,from your problemset , which you have attempted but didn't get an accepted verdict.</Typography>
                     </Grid>
                 </Grid>
             </motion.div>
-        </div>
+        </motion.div>
     );
 };
 

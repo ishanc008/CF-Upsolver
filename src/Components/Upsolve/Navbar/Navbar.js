@@ -7,7 +7,7 @@ const Navbar = () => {
     const classes = useStyles();
     const history = useHistory();
     return (
-        <AppBar className={classes.appBar} position="static" >
+        <AppBar className={classes.appBar} position="relative" >
             <Toolbar>
                 <Avatar className={classes.avatar} variant="square" src="https://icons-for-free.com/iconfiles/png/512/codeforces-1324440139959685960.png" />
                 <Typography className={classes.typoGraphy} variant="h2">

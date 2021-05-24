@@ -1,5 +1,68 @@
 .Info {
   color: white;
-  padding-top: 2%;
   text-align: center;
+  font-size: 18px;
+}
+
+.button {
+  background-image: linear-gradient(
+    to right,
+    #1d2b64 0%,
+    #f8cdda 51%,
+    #1d2b64 100%
+  );
+}
+.button {
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  font-weight: bolder;
+  color: rgb(17, 7, 7);
+  border-radius: 10px;
+  display: block;
+}
+
+.button:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1130px) {
+  .Info {
+    font-size: 15px;
+  }
+  .button {
+    padding: 15px 35px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .Info {
+    font-size: 12px;
+  }
+  .button {
+    padding: 15px 30px;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .Info {
+    font-size: 10px;
+  }
+  .button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .Info {
+    font-size: 8px;
+  }
+  .button {
+    padding: 15px 20px;
+  }
 }

@@ -5,9 +5,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
     marginTop: "4%",
     marginLeft: "25%",
+    marginBottom: "3%",
     borderRadius: "50px 20px",
     background: "linear-gradient(45deg , #004e92 , #000428)",
-
     transform: "translateY(-50%)",
     width: "50%",
     //boxShadow: "0 1px 10px #cc2b5e, 0 0 20px  #753a88"
@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   typoGraphy: {
     fontFamily: "Open Sans",
     color: "#ffa500",
-    fontSize: "50px",
+    fontSize: "35px",
     ["@media (max-width:1240px)"]: {
       fontSize: "30px",
     },
@@ -53,9 +53,17 @@ const useStyles = makeStyles((theme) => ({
       height: "30px",
       width: "30px",
     },
+    ["@media (max-width:700px)"]: {
+      height: "25px",
+      width: "25px",
+    },
+    ["@media (max-width:450px)"]: {
+      height: "20px",
+      width: "20px",
+    },
   },
   button: {
-    marginLeft: "20%",
+    marginLeft: "30%",
     ["@media (max-width:890px)"]: {
       marginLeft: "15%",
       fontSize: "10px",
@@ -64,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: "10%",
       fontSize: "7px",
     },
+    ["@media (max-width:611px)"]: {
+      fontSize: "5px",
+    }
   },
 }));
 

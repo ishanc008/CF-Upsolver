@@ -65,7 +65,7 @@ const Upsolve = () => {
             <motion.div initial={{ x: -10, y: 30 }} animate={{ x: 5, y: 30 }} transition={{ ease: "easeOut", duration: 1 }} style={{ flexGrow: 1, marginTop: "8%" }}>
                 <Grid container spacing={2} justify="space-evenly">
                     <Grid item xs={6} align="center">
-                        <button className={classes.button}>Recommended Problems</button>
+                        <button onClick={() => history.push("/upsolve/recommended")} className={classes.button}>Recommended Problems</button>
                     </Grid>
                     <Grid item xs={6} align="center">
                         <button onClick={() => history.push("/upsolve/pending")} className={classes.button}>Pending Problems</button>

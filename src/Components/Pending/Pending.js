@@ -5,6 +5,8 @@ import Questions from "./Questions/Questions"
 import AccessTimeIcon from '@material-ui/icons/AccessTime';
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom"
+import { CircularProgress } from "@material-ui/core"
+
 
 
 const Pending = () => {
@@ -118,20 +120,20 @@ const Pending = () => {
   return (
     <>
       {
-        data &&
-        <motion.div exit={{ opacity: 0 }} transition={transition}>
-          <motion.div initial={{ x: -10, y: 0 }} animate={{ x: 5, y: 0 }} transition={{ ease: "easeOut", duration: 1 }}>
-            <Navbar />
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <AccessTimeIcon fontSize="large" color="secondary" style={{ alignSelf: "center" }} />&nbsp;
+        data ?
+          <motion.div exit={{ opacity: 0 }} transition={transition}>
+            <motion.div initial={{ x: -10, y: 0 }} animate={{ x: 5, y: 0 }} transition={{ ease: "easeOut", duration: 1 }}>
+              <Navbar />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <AccessTimeIcon fontSize="large" color="secondary" style={{ alignSelf: "center" }} />&nbsp;
             &nbsp;<h2 style={{ color: "white", fontFamily: "cursive" }}> Pending Problems({data.unSolvedProbs.length})</h2>
-            </div>
-            <div style={{ marginTop: "3%" }}>
-              {console.log("quqestion called")}
-              <Questions data={data} />
-            </div>
-          </motion.div>
-        </motion.div>
+              </div>
+              <div style={{ marginTop: "3%" }}>
+                {console.log("quqestion called")}
+                <Questions data={data} />
+              </div>
+            </motion.div>
+          </motion.div> : <CircularProgress />
       }
     </>
   );

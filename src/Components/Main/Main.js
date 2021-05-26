@@ -1,9 +1,9 @@
 import { useState } from "react";
-import axios from "axios"
-import Navbar from "../Navbar/Navbar"
-import { useHistory } from "react-router-dom"
+import axios from "axios";
+import Navbar from "../Navbar/Navbar";
+import { useHistory } from "react-router-dom";
 import classes from "./styles.module.css";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
 const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
 
@@ -16,26 +16,27 @@ const Main = () => {
   const handleOnChange = (e) => {
     setCfHandle(e.target.value);
     setError("");
-  }
+  };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(cfHandle);
-    axios.get(`https://codeforces.com/api/user.info?handles=${cfHandle}`)
+    //console.log(cfHandle);
+    axios
+      .get(`https://codeforces.com/api/user.info?handles=${cfHandle}`)
       .then((res) => {
-        console.log(res);
+        //console.log(res);
         localStorage.setItem("profile", JSON.stringify(res));
         setCfHandle("");
         history.push("/upsolve");
       })
-      .catch(err => {
-        console.log(err.response.data.comment);
+      .catch((err) => {
+        //console.log(err.response.data.comment);
         setError("Handle not found");
-      })
-  }
+      });
+  };
 
   return (
-    <motion.div exit={{ opacity: 0 }} transition={transition} >
+    <motion.div exit={{ opacity: 0 }} transition={transition}>
       <Navbar />
       <div className={classes.button}>
         <input
@@ -44,7 +45,7 @@ const Main = () => {
           id="checkbox"
         />
         <div className={classes["c-formContainer"]}>
-          <form className={classes["c-form"]} onSubmit={handleOnSubmit} >
+          <form className={classes["c-form"]} onSubmit={handleOnSubmit}>
             <input
               autoFocus
               className={classes["c-form__input"]}
@@ -55,9 +56,9 @@ const Main = () => {
               required
             />
             <div className={classes["c-form__buttonLabel"]}>
-              <button className={classes["c-form__button"]} type="submit" >
+              <button className={classes["c-form__button"]} type="submit">
                 Submit
-            </button>
+              </button>
             </div>
             <label
               className={classes["c-form__toggle"]}

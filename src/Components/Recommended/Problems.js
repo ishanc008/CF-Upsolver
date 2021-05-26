@@ -68,7 +68,7 @@ export const getRecommendedProblems = async (userHandle) => {
   }
   avgRating = Math.floor(rate / length);
   avgRating = Math.round(avgRating / 100) * 100;
-  console.log(avgRating);
+  //   console.log(avgRating);
 
   const easyProbs = [];
   const mediumProbs = [];

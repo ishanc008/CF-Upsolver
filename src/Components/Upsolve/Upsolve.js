@@ -1,17 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar/Navbar";
 import { motion } from "framer-motion";
 import classes from "./Upsolve.module.css";
 import { Typography, Grid } from "@material-ui/core";
 import { useHistory } from "react-router-dom"
 
-const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
+const transition = { duration: 0.2, ease: [0.43, 0.13, 0.23, 0.96] };
 
-const Upsolve = (props) => {
-    //console.log(props.userInfo?.data?.result);
-    const user = props.userInfo?.data?.result[0];
-    const userRating = user?.rating;
+const Upsolve = () => {
     const history = useHistory();
+    const userInfo = JSON.parse(localStorage.getItem("profile"));
+    if (!userInfo) {
+        alert("Enter a handle")
+        history.push("/");
+        return (
+            <div>login required</div>
+        )
+    }
+    console.log(userInfo);
+    const user = userInfo.data.result[0];
+    const userRating = user.rating;
     const userTitle = (rating) => {
         let title;
         if (rating < 1200) title = ["Newbie", "grey"];
@@ -31,7 +39,7 @@ const Upsolve = (props) => {
     console.log(title);
     return (
         <motion.div exit={{ opacity: 0 }} transition={transition} >
-            <motion.div initial={{ x: -10, y: 30 }} animate={{ x: 5, y: 30 }} transition={{ ease: "easeOut", duration: 1 }}>
+            <motion.div initial={{ x: -10, y: 10 }} animate={{ x: 5, y: 10 }} transition={{ ease: "easeOut", duration: 1 }}>
                 <Navbar />
             </motion.div>
             <motion.div initial={{ x: -10, y: 30 }} animate={{ x: 5, y: 30 }} transition={{ ease: "easeOut", duration: 1 }} className={classes.Info}>
@@ -54,7 +62,7 @@ const Upsolve = (props) => {
                 <h3>Organization- {user.organization}</h3>
                 <h3>Country- {user.country}</h3>
             </motion.div>
-            <motion.div initial={{ x: -10, y: 30 }} animate={{ x: 5, y: 30 }} transition={{ ease: "easeOut", duration: 1 }} style={{ flexGrow: 1, marginTop: "10%" }}>
+            <motion.div initial={{ x: -10, y: 30 }} animate={{ x: 5, y: 30 }} transition={{ ease: "easeOut", duration: 1 }} style={{ flexGrow: 1, marginTop: "8%" }}>
                 <Grid container spacing={2} justify="space-evenly">
                     <Grid item xs={6} align="center">
                         <button className={classes.button}>Recommended Problems</button>

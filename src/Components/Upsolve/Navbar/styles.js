@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Open Sans",
     color: "#ffa500",
     fontSize: "35px",
+    '&:hover': {
+      cursor: "pointer"
+    },
     ["@media (max-width:1240px)"]: {
       fontSize: "30px",
     },

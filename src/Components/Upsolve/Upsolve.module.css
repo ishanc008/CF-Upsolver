@@ -23,6 +23,7 @@
   color: rgb(17, 7, 7);
   border-radius: 10px;
   display: block;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .button:hover {

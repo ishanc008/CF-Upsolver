@@ -51,10 +51,10 @@ const Upsolve = () => {
         className={classes.Info}
       >
         <div>
-          <h2 style={{ fontFamily: "cursive", display: "inline" }}>Welcome,</h2>
+          <h2 style={{ fontFamily: "'Ubuntu', sans-serif", display: "inline" }}>Welcome,</h2>
           <h2
             style={{
-              fontFamily: "cursive",
+              fontFamily: "'Ubuntu', sans-serif",
               color: title[1],
               display: "inline",
             }}

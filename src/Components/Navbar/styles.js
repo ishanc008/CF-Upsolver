@@ -5,26 +5,39 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
     marginTop: "10px",
     borderRadius: "50px 20px",
-    background: "linear-gradient(45deg , #004e92 , #000428)",
+    background: "black",
     position: "absolute",
     top: "37%",
     left: "26%",
     transform: "translateY(-50%)",
     width: "50%",
     //boxShadow: "0 1px 10px #cc2b5e, 0 0 20px  #753a88"
+    ["@media (max-width:1240px)"]: {
+      padding: "8px",
+    },
+    ["@media (max-width:1130px)"]: {
+      padding: "6px",
+    },
+
+    ["@media (max-width:1060px)"]: {
+      padding: "4px",
+    },
   },
   typoGraphy: {
-    fontFamily: "Open Sans",
-    color: "#ffa500",
+    fontFamily: "'Ubuntu', sans-serif",
+    color: "#FF6037",
     fontSize: "50px",
+    marginLeft: "13%",
     '&:hover': {
       cursor: "pointer"
     },
     ['@media (max-width:890px)']: {
-      fontSize: "30px"
+      fontSize: "30px",
+      marginLeft: "11%"
     },
     ['@media (max-width:611px)']: {
-      fontSize: "20px"
+      fontSize: "20px",
+      marginLeft: "9%"
     },
   },
   avatar: {

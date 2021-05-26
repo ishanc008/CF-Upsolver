@@ -7,7 +7,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: "25%",
     marginBottom: "3%",
     borderRadius: "50px 20px",
-    background: "linear-gradient(45deg , #004e92 , #000428)",
+    background: "#0f2027",
+    background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
     transform: "translateY(-50%)",
     width: "50%",
     //boxShadow: "0 1px 10px #cc2b5e, 0 0 20px  #753a88"
@@ -24,8 +25,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   typoGraphy: {
-    fontFamily: "Open Sans",
-    color: "#ffa500",
+    fontFamily: "'Ubuntu', sans-serif",
+    color: "#FF6037",
     fontSize: "35px",
     '&:hover': {
       cursor: "pointer"
@@ -67,6 +68,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginLeft: "30%",
+    fontFamily: "'Ubuntu', sans-serif",
     ["@media (max-width:890px)"]: {
       marginLeft: "15%",
       fontSize: "10px",
@@ -76,6 +78,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "7px",
     },
     ["@media (max-width:611px)"]: {
+      marginLeft: "5%",
       fontSize: "5px",
     }
   },

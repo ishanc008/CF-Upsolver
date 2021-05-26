@@ -17,6 +17,6 @@ export default makeStyles((theme) => ({
     typography: {
         color: "white",
         marginTop: "5%",
-        fontFamily: "cursive",
+        fontFamily: "'Ubuntu', sans-serif",
     }
 }));

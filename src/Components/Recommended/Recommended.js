@@ -35,7 +35,7 @@ const Recommended = () => {
                         <motion.div initial={{ x: -10, y: 0 }} animate={{ x: 5, y: 0 }} transition={{ ease: "easeOut", duration: 1 }}>
                             <Navbar />
                             <div style={{ display: "flex", justifyContent: "center" }}>
-                                <h2 style={{ color: "white", fontFamily: "cursive" }}> Recommended Problems</h2>
+                                <h1 style={{ color: "white", fontFamily: "'Ubuntu', sans-serif" }}> Recommended Problems</h1>
                             </div>
                             <div style={{ marginTop: "3%" }}>
                                 <Questions data={data} />

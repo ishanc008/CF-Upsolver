@@ -126,7 +126,7 @@ const Pending = () => {
               <Navbar />
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <AccessTimeIcon fontSize="large" color="secondary" style={{ alignSelf: "center" }} />&nbsp;
-            &nbsp;<h2 style={{ color: "white", fontFamily: "cursive" }}> Pending Problems({data.unSolvedProbs.length})</h2>
+            &nbsp;<h1 style={{ color: "white", fontFamily: "'Ubuntu', sans-serif" }}> Pending Problems({data.unSolvedProbs.length})</h1>
               </div>
               <div style={{ marginTop: "3%" }}>
                 {console.log("quqestion called")}

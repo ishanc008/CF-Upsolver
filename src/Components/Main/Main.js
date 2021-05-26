@@ -46,6 +46,7 @@ const Main = () => {
         <div className={classes["c-formContainer"]}>
           <form className={classes["c-form"]} onSubmit={handleOnSubmit} >
             <input
+              autoFocus
               className={classes["c-form__input"]}
               placeholder="CF Handle"
               type="text"

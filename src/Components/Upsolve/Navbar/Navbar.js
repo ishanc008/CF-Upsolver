@@ -2,6 +2,7 @@ import { AppBar, Avatar, Button, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
 import useStyles from "./styles"
 import { useHistory } from "react-router-dom"
+import cflogo from "../../../Images/index-removebg-preview.png"
 
 const Navbar = () => {
     const classes = useStyles();
@@ -17,7 +18,7 @@ const Navbar = () => {
     return (
         <AppBar className={classes.appBar} position="relative" >
             <Toolbar>
-                <Avatar className={classes.avatar} variant="square" src="https://icons-for-free.com/iconfiles/png/512/codeforces-1324440139959685960.png" />
+                <Avatar className={classes.avatar} variant="square" src={cflogo} />
                 <Typography className={classes.typoGraphy} onClick={handleOnClick} variant="h2">
                     CF Upsolver
                 </Typography>

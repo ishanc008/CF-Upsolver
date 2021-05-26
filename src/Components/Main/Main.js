@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 
 const transition = { duration: 1, ease: [0.43, 0.13, 0.23, 0.96] };
 
-const Main = (props) => {
+const Main = () => {
   const [cfHandle, setCfHandle] = useState("");
   const [error, setError] = useState("");
 
@@ -23,8 +23,8 @@ const Main = (props) => {
     console.log(cfHandle);
     axios.get(`https://codeforces.com/api/user.info?handles=${cfHandle}`)
       .then((res) => {
-        //console.log(res);
-        props.setUserInfo(res);
+        console.log(res);
+        localStorage.setItem("profile", JSON.stringify(res));
         setCfHandle("");
         history.push("/upsolve");
       })

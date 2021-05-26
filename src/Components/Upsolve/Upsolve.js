@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./Navbar/Navbar";
 import { motion } from "framer-motion";
 import classes from "./Upsolve.module.css";
@@ -15,7 +15,7 @@ const Upsolve = () => {
     history.push("/");
     return <div>login required</div>;
   }
-  console.log(userInfo);
+  //   console.log(userInfo);
   const user = userInfo.data.result[0];
   const userRating = user.rating;
   const userTitle = (rating) => {
@@ -34,7 +34,7 @@ const Upsolve = () => {
   };
   const title = userTitle(userRating);
   const maxTitle = userTitle(user.maxRating);
-  console.log(title);
+  //   console.log(title);
   return (
     <motion.div exit={{ opacity: 0 }} transition={transition}>
       <motion.div
@@ -51,7 +51,9 @@ const Upsolve = () => {
         className={classes.Info}
       >
         <div>
-          <h2 style={{ fontFamily: "'Ubuntu', sans-serif", display: "inline" }}>Welcome,</h2>
+          <h2 style={{ fontFamily: "'Ubuntu', sans-serif", display: "inline" }}>
+            Welcome,
+          </h2>
           <h2
             style={{
               fontFamily: "'Ubuntu', sans-serif",

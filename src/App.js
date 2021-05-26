@@ -4,6 +4,7 @@ import Pending from "./Components/Pending/Pending"
 import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import Recommended from "./Components/Recommended/Recommended";
 
 const App = () => {
   return (
@@ -19,6 +20,9 @@ const App = () => {
             </Route>
             <Route path="/upsolve/pending" exact>
               <Pending />
+            </Route>
+            <Route path="/upsolve/recommended" exact>
+              <Recommended />
             </Route>
           </Switch>
         </AnimatePresence>

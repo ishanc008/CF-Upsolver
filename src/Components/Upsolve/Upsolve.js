@@ -127,7 +127,9 @@ const Upsolve = () => {
               display="block"
               style={{ color: "white" }}
             >
-              Visualize your overall performance on CodeForces.
+              Visualize your overall performance on CodeForces(Performance is
+              calculated only if there are more than 10 "Accepted" Verdicts for
+              that particular category)
             </Typography>
           </Grid>
           <Grid item xs={4}>

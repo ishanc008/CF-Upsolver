@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "10px",
     marginTop: "4%",
     marginLeft: "25%",
-    marginBottom: "3%",
+    marginBottom: "1%",
     borderRadius: "50px 20px",
     background: "#0f2027",
     background: "linear-gradient(to right, #0f2027, #203a43, #2c5364)",
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     ["@media (max-width:1060px)"]: {
+      marginLeft: "20%",
       padding: "4px",
     },
   },
@@ -43,6 +44,12 @@ const useStyles = makeStyles((theme) => ({
     },
     ["@media (max-width:995px)"]: {
       fontSize: "15px",
+    },
+    ["@media (max-width:600px)"]: {
+      fontSize: "10px",
+    },
+    ["@media (max-width:450px)"]: {
+      fontSize: "8px",
     },
   },
   avatar: {

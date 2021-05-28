@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom"
 import { AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import Recommended from "./Components/Recommended/Recommended";
+import Analysis from "./Components/Analysis/Analysis";
 
 const App = () => {
   return (
@@ -23,6 +24,9 @@ const App = () => {
             </Route>
             <Route path="/upsolve/recommended" exact>
               <Recommended />
+            </Route>
+            <Route path="/upsolve/analysis">
+              <Analysis />
             </Route>
           </Switch>
         </AnimatePresence>

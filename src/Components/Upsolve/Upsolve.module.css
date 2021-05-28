@@ -67,3 +67,23 @@
     padding: 15px 20px;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .Info {
+    font-size: 6px;
+  }
+  .button {
+    font-size: 15px;
+    padding: 13px 15px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Info {
+    font-size: 5px;
+  }
+  .button {
+    font-size: 10px;
+    padding: 10px 10px;
+  }
+}

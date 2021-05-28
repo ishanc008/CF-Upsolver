@@ -83,8 +83,8 @@ const Upsolve = () => {
         transition={{ ease: "easeOut", duration: 1 }}
         style={{ flexGrow: 1, marginTop: "8%" }}
       >
-        <Grid container spacing={2} justify="space-evenly">
-          <Grid item xs={6} align="center">
+        <Grid container spacing={1} justify="space-evenly">
+          <Grid item xs={4} align="center">
             <button
               onClick={() => history.push("/upsolve/recommended")}
               className={classes.button}
@@ -92,7 +92,15 @@ const Upsolve = () => {
               Recommended Problems
             </button>
           </Grid>
-          <Grid item xs={6} align="center">
+          <Grid item xs={4} align="center">
+            <button
+              onClick={() => history.push("/upsolve/analysis")}
+              className={classes.button}
+            >
+              Analysis
+            </button>
+          </Grid>
+          <Grid item xs={4} align="center">
             <button
               onClick={() => history.push("/upsolve/pending")}
               className={classes.button}
@@ -100,7 +108,7 @@ const Upsolve = () => {
               Pending Problems
             </button>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={4}>
             <Typography
               variant="subtitle1"
               align="center"
@@ -112,7 +120,17 @@ const Upsolve = () => {
               unsolved problems from your problemset.
             </Typography>
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={4}>
+            <Typography
+              variant="subtitle1"
+              align="center"
+              display="block"
+              style={{ color: "white" }}
+            >
+              Analysis of your performance in cf
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
             <Typography
               variant="subtitle1"
               align="center"

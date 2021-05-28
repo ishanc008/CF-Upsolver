@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Bar } from 'react-chartjs-2'
+import { Bar, Pie } from 'react-chartjs-2'
+import { Switch } from '@material-ui/core'
 
-const BarChart = (props) => {
+const Tags = (props) => {
     const [ACprobs, setACprobs] = useState(props.AcProbs)
+    const [type, setType] = useState(true)
     const [ChartData, setChartData] = useState(null);
     const [label, setLabel] = useState([]);
     const [value, setValue] = useState([]);
@@ -10,6 +12,10 @@ const BarChart = (props) => {
     useEffect(() => {
         getTags();
     }, [])
+
+    const handleToggle = () => {
+        setType((prev) => !prev);
+    }
 
     const getTags = async () => {
         let tags = new Map();
@@ -60,10 +66,10 @@ const BarChart = (props) => {
 
     return (
         <div style={{ width: "50%" }}>
-            <h1 style={{ fontSize: "2vw", fontFamily: "'Ubuntu', sans-serif", color: "#FF6037", borderBottom: "2px solid #FF6037", display: "inline-block" }}>On the basis of tags :</h1>
+            <h1 style={{ fontSize: "2vw", fontFamily: "'Ubuntu', sans-serif", color: "#FF6037", borderBottom: "2px solid #FF6037", display: "inline-block" }}>On the basis of problem tags :</h1>
             <div>
-                {ChartData &&
-                    <Bar
+                {ChartData && type ?
+                    <Pie
                         data={{
                             labels: label,
                             datasets: [
@@ -93,17 +99,52 @@ const BarChart = (props) => {
                                             size: 15,
                                             family: "'Ubuntu', sans-serif"
                                         },
-                                        color: "red",
+                                        color: "gray",
                                     },
                                     position: "bottom",
                                 }
                             }
                         }}
+                    /> :
+                    <Bar
+                        data={{
+                            labels: label,
+                            datasets: [
+                                {
+                                    label: "Performance",
+                                    data: value,
+                                    backgroundColor: ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
+                                        '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+                                        '#80B300', '#809900', '#E6B3B3', '#6680B3', 'red',
+                                        '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+                                        '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC',
+                                        '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+                                        '#E666B3', '#33991A', '#CC9999', '#B3B31A'],
+                                    hoverBorderColor: "green",
+                                    hoverBorderWidth: 3,
+                                },
+                            ],
+                        }}
+                        height={400}
+                        width={600}
+                        options={{
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: {
+                                    display: false,
+                                }
+                            }
+                        }}
                     />
+
                 }
             </div>
+            <span style={{ marginLeft: "50%" }}>
+                <Switch onChange={handleToggle} />
+                <h1 style={{ fontSize: "1vw", fontFamily: "'Ubuntu', sans-serif", color: "#FF6037", display: "inline" }}>Bar Chart</h1>
+            </span>
         </div>
     )
 }
 
-export default BarChart
+export default Tags

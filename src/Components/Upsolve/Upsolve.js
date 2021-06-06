@@ -20,7 +20,8 @@ const Upsolve = () => {
   const userRating = user.rating;
   const userTitle = (rating) => {
     let title;
-    if (rating < 1200) title = ["Newbie", "gray"];
+    if (rating === undefined) title = ["Unrated", "black"];
+    else if (rating < 1200) title = ["Newbie", "gray"];
     else if (rating < 1400) title = ["Pupil", "LightGreen"];
     else if (rating < 1600) title = ["Specialist", "#03a89e"];
     else if (rating < 1900) title = ["Expert", "blue"];
